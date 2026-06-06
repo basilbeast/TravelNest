@@ -1,0 +1,328 @@
+/* Reset box sizing for predictable layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #f5f8fa;
+  color: #232323;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0275d8;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 12px rgba(50,60,80,0.08);
+  position: relative;
+}
+
+.nav-brand {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.3s ease;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #ffe15d;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+  position: static;
+  padding: 0;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+  display: block;
+}
+
+/* Responsive Hamburger menu for nav */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.09);
+    border-radius: 0 0 8px 8px;
+    padding: 0;
+    z-index: 1000;
+    transition: max-height 0.3s ease;
+  }
+  .nav-links.open {
+    max-height: 500px;
+    padding: 1rem 0;
+    transition: max-height 0.3s ease;
+  }
+  .nav-links li {
+    padding: 0.35rem 1.25rem;
+  }
+  .nav-links li a {
+    color: #232323;
+    display: block;
+  }
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    color: #0275d8;
+  }
+  .nav-links li a.active {
+    color: #0275d8;
+    font-weight: 700;
+  }
+  .nav-toggle {
+    display: flex;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+  }
+}
+
+/* -------- TravelMood-specific styles -------- */
+
+.ambient-sounds {
+  background: #fff6e7;
+  border: 2.4px solid #ffe15d;
+  border-radius: 1.2rem;
+  box-shadow: 0 2.5px 12px rgba(2,117,216,0.08), 0 0.5px 1.5px #ffe15d20 inset;
+  margin: 2.4rem auto 2.3rem auto;
+  max-width: 500px;
+  padding: 1.8rem 2.4rem 1.5rem 2.4rem;
+  text-align: center;
+}
+
+.ambient-sounds h2 {
+  color: #0275d8;
+  font-size: 1.22rem;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.03em;
+}
+
+.ambient-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.21rem;
+  margin-bottom: 0.7rem;
+}
+
+.ambient-btn {
+  padding: 0.68rem 1.45rem;
+  border-radius: 0.7rem;
+  background: #ffe15d;
+  color: #034780;
+  font-size: 1.07rem;
+  font-weight: 700;
+  border: 2px solid #ffe15d;
+  cursor: pointer;
+  box-shadow: 0 1.5px 7px #ffd33349;
+  outline: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.18s, transform 0.13s, border 0.2s;
+}
+
+.ambient-btn.active, .ambient-btn:hover, .ambient-btn:focus {
+  background: #0275d8;
+  color: #ffe15d;
+  border: 2px solid #0275d8;
+  box-shadow: 0 3px 12px #0275d811;
+  transform: scale(1.07);
+}
+
+#pauseBtn {
+  background: #fff;
+  color: #b2b2b2;
+  border: 1.7px solid #cdcbba;
+  font-weight: 500;
+  transition: background 0.17s, color 0.14s, border 0.17s;
+  box-shadow: 0 1.5px 7px #ffe15d2c;
+}
+#pauseBtn:hover, #pauseBtn:focus {
+  background: #ffe15d;
+  color: #0275d8;
+  border-color: #0275d8;
+}
+
+/* Hide audio element */
+audio {
+  display: none !important;
+}
+
+.travel-destinations {
+  background: #fff;
+  border: 2.5px solid #ffe15d;
+  border-radius: 1.2rem;
+  box-shadow: 0 3px 15px rgba(2,117,216,0.10);
+  max-width: 600px;
+  margin: 2rem auto 2.2rem auto;
+  padding: 1.8rem 2.4rem 2.1rem 2.4rem;
+}
+
+.travel-destinations h2 {
+  color: #0275d8;
+  font-size: 1.18rem;
+  font-weight: 800;
+  margin-bottom: 1.23rem;
+  text-align: center;
+  letter-spacing: 0.012em;
+}
+
+/* Destination List Style */
+#destinationList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.09rem 1.1rem;
+}
+
+#destinationList li {
+  background: #fff6e7;
+  padding: 1.13rem 1.27rem;
+  border-radius: 1.1rem;
+  border: 2.3px solid #ffe15d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 1.5px 7px rgba(2,117,216,0.05);
+  position: relative;
+  transition: box-shadow 0.22s, border 0.2s;
+}
+
+#destinationList li.visited {
+  background: #e3fbdb;
+  border-color: #03af5a;
+  box-shadow: 0 2.5px 13px #03af5a19;
+}
+
+.destination-name {
+  font-size: 1.07rem;
+  font-weight: 700;
+  color: #073763;
+  margin-bottom: 0.51rem;
+  letter-spacing: 0.01em;
+}
+
+.mark-btn {
+  margin-top: 0.21rem;
+  padding: 0.52rem 1.13rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffe15d;
+  background: #0275d8;
+  border: 2px solid #0275d8;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 1.5px 8px #0275d80e;
+  transition: background 0.19s, color 0.19s, border 0.2s, transform 0.13s;
+  outline: none;
+}
+
+.mark-btn[data-status="visited"] {
+  background: #03af5a;
+  color: #fff;
+  border: 2px solid #03af5a;
+}
+
+.mark-btn:hover, .mark-btn:focus {
+  background: #ffe15d;
+  color: #0275d8;
+  border: 2px solid #ffe15d;
+  transform: scale(1.08);
+}
+
+.mark-btn[data-status="visited"]:hover,
+.mark-btn[data-status="visited"]:focus {
+  background: #0275d8;
+  color: #ffe15d;
+  border: 2px solid #0275d8;
+}
+
+/* Responsive Design for TravelMood */
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .ambient-sounds,
+  .travel-destinations {
+    padding: 1rem 0.7rem 1.2rem 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-brand {
+    font-size: 1.4rem;
+  }
+  .ambient-sounds h2,
+  .travel-destinations h2 {
+    font-size: 0.99rem;
+  }
+  .destination-name,
+  .mark-btn {
+    font-size: 0.96rem;
+  }
+}
+
+/* Hide spin buttons on number inputs if added later */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type="number"] {
+  -moz-appearance:textfield;
+}

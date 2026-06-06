@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Home Page">
+  <title>TravelNest - Plan Your Perfect Trip</title>
+  <link rel="stylesheet" href="index.css">
+  <script defer src="index.js"></script>
+</head>
+<body>
+  <!-- Responsive Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-brand">TravelNest</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="DestinationExploret.html">Destinations</a></li>
+      <li><a href="RandomTrip.html">Random Trip</a></li>
+      <li><a href="TripBudget.html">Trip Budget</a></li>
+      <li><a href="TravelMood.html">Travel Mood</a></li>
+      <li><a href="Feedback.html">Feedback and FAQ</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section: Auto-rotating Quotes with Destination of the Day -->
+  <section class="hero-section">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1 id="heroTitle">Welcome to TravelNest</h1>
+        <p id="heroQuote"></p>
+        <div class="destination-day">
+          <h2>Destination of the Day</h2>
+          <div class="destination-info" id="destinationDay"></div>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <img id="heroImage" src="paris.jpg" alt="Travel Destination" loading="lazy" />
+        <div class="image-gallery">
+          <!-- Images will be populated via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer with navigation links and newsletter -->
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <form class="newsletter-form" id="newsletterForm">
+        <label for="newsletterEmail">Subscribe to Travel Nest Newsletter:</label>
+        <input type="email" id="newsletterEmail" name="newsletterEmail" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="currentYear"></span> TravelNest. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

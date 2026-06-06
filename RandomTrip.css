@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #f5f8fa;
+  color: #232323;
+}
+
+/* Center form on page to match index.css box style */
+.random-trip-form {
+  max-width: 480px;
+  margin: 2.8rem auto 0 auto;
+  padding: 2.2rem 2.7rem 2rem 2.7rem;
+  background: #fff;
+  border-radius: 1.17rem;
+  box-shadow: 0 4px 17px rgba(39,90,170,0.11), 0 0.5px 1.5px #ffe15d inset;
+  border: 2.8px solid #ffe15d;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Form Label Styling */
+.random-trip-label {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #045488;
+  margin-bottom: 0.38rem;
+  letter-spacing: 0.014em;
+}
+
+/* Select Styling */
+.random-trip-select {
+  padding: 0.84rem 1.1rem;
+  border-radius: 0.69rem;
+  border: 1.9px solid #aee4f7;
+  font-size: 1.10rem;
+  background: #f4faff;
+  color: #214066;
+  margin-bottom: 0.2rem;
+  outline: none;
+  font-family: inherit;
+  font-weight: 500;
+  transition: border 0.17s, box-shadow 0.17s;
+  box-shadow: 0 1.5px 4px rgba(0,90,210,0.06);
+}
+
+.random-trip-select:focus {
+  border-color: #0275d8;
+  box-shadow: 0 0 0 2px #aee4f7;
+}
+
+/* Remove spinners in number input if needed in future */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .random-trip-form {
+    max-width: 98vw;
+    padding: 1.1rem 1.1rem 1rem 1.1rem;
+  }
+  .random-trip-label {
+    font-size: 1rem;
+  }
+  .random-trip-select {
+    font-size: 1rem;
+    padding: 0.73rem 0.72rem;
+  }
+}
+
+/* Optional: Style placeholder-like disabled options */
+.random-trip-select option[disabled] {
+  color: #b0b7c7;
+}
+
+/** Navbar Styling for RandomTrip.html */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0275d8;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 12px rgba(50,60,80,0.08);
+  position: relative;
+}
+
+.nav-brand {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.3s ease;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #ffe15d;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+  position: static;
+  padding: 0;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+  display: block;
+}
+
+/* Responsive Hamburger menu for nav */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.09);
+    border-radius: 0 0 8px 8px;
+    padding: 0;
+    z-index: 1000;
+    transition: max-height 0.3s ease;
+  }
+  .nav-links.open {
+    max-height: 500px;
+    padding: 1rem 0;
+    transition: max-height 0.3s ease;
+  }
+  .nav-links li {
+    padding: 0.35rem 1.25rem;
+  }
+  .nav-links li a {
+    color: #232323;
+    display: block;
+  }
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    color: #0275d8;
+  }
+  .nav-links li a.active {
+    color: #0275d8;
+    font-weight: 700;
+  }
+  .nav-toggle {
+    display: flex;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-brand {
+    font-size: 1.4rem;
+  }
+}

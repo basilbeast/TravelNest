@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Trip Budget Planner</title>
+        <meta name="description" content="Trip Budget Planner">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="TripBudget.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-brand">TravelNest</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="DestinationExploret.html">Destinations</a></li>
+                <li><a href="RandomTrip.html">Random Trip</a></li>
+                <li><a href="TripBudget.html" class="active">Trip Budget</a></li>
+                <li><a href="TravelMood.html">Travel Mood</a></li>
+                <li><a href="Feedback.html">Feedback and FAQ</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks" tabindex="0">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+        <h1 class="trip-budget-title">Trip Budget Planner</h1>
+        <form action="#" class="trip-budget-form">
+            <label for="destination" class="trip-budget-label">Destination</label>
+            <select name="destination" id="destination" class="trip-budget-select">
+                <option value="Paris">Paris</option>
+                <option value="Tokyo">Tokyo</option>
+                <option value="Rome">Rome</option>
+                <option value="Barcelona">Barcelona</option>
+                <option value="New York City">New York City</option>
+            </select>
+            <label for="daily-budget" class="trip-budget-label">Daily Budget</label>
+            <input type="number" name="daily-budget" id="daily-budget" class="trip-budget-input">
+            <label for="startDate" class="trip-budget-label">Start Date</label>
+            <input type="date" name="startDate" id="startDate" class="trip-budget-input">
+            <label for="endDate" class="trip-budget-label">End Date</label>
+            <input type="date" name="endDate" id="endDate" class="trip-budget-input">
+            <button type="submit" class="trip-budget-submit">Calculate Budget</button>
+            <div id="tripBudgetResults" class="trip-budget-results">
+                <!-- The results will be rendered here by JS -->
+            </div>
+        </form>
+        <script defer src="TripBudget.js"></script>
+    </body>
+</html>

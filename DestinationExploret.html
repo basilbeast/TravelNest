@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Explore Destinations</title>
+  <meta name="description" content="Explore Destinations">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Destination.css">
+  <link rel="stylesheet" href="index.css">
+  <script defer src="Destination.js"></script>
+</head>
+<body>
+  <!-- Responsive Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-brand">TravelNest</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="DestinationExploret.html" class="active">Destinations</a></li>
+      <li><a href="RandomTrip.html">Random Trip</a></li>
+      <li><a href="TripBudget.html">Trip Budget</a></li>
+      <li><a href="TravelMood.html">Travel Mood</a></li>
+      <li><a href="Feedback.html">Feedback and FAQ</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" tabindex="0">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+  </nav>
+
+  <h1 style="text-align:center; margin-top:2rem;">Explore Destinations</h1>
+
+  <!-- Filter/Search Form: IDs and structure as required -->
+  <form id="destinationFilterForm" style="display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0;">
+    <div>
+      <label for="continentSelect">Continent:</label>
+      <select id="continentSelect" name="continent">
+        <option value="">All</option>
+        <option value="Europe">Europe</option>
+        <option value="Asia">Asia</option>
+        <option value="Australia">Australia</option>
+        <option value="North America">North America</option>
+        <option value="South America">South America</option>
+        <option value="Africa">Africa</option>
+      </select>
+    </div>
+    <div>
+      <label for="destinationNameInput">Destination Name:</label>
+      <input type="text" id="destinationNameInput" name="destinationName" placeholder="e.g. Paris">
+    </div>
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Destinations List -->
+  <div class="destinations-container" id="destinationsList">
+    <!-- Destination cards will be inserted here by JS -->
+  </div>
+
+  <!-- Modal for destination details -->
+  <div id="destinationModal" class="destination-modal" style="display:none;">
+    <div id="destinationModalContent" class="destination-modal-content">
+      <button id="closeModalBtn" class="close-modal-btn" aria-label="Close">&times;</button>
+      <h2 id="modalDestinationName" class="modal-destination-name"></h2>
+      <h4 id="modalDestinationRegion" class="modal-destination-region"></h4>
+      <img 
+        id="modalDestinationImage" 
+        class="modal-destination-image" 
+        src="" 
+        alt=""
+        onerror="this.onerror=null;this.src='fallback-image.jpg';"
+      >
+      <div id="modalDestinationDescription" class="modal-destination-description"></div>
+      <div class="modal-attractions-section">
+        <strong>Popular Attractions:</strong>
+        <ul id="modalDestinationAttractions" class="modal-destination-attractions"></ul>
+      </div>
+      <div class="modal-cost-section">
+        <strong>Travel Cost Comparison:</strong>
+        <div class="modal-cost-table-container">
+          <table id="modalCostTable" border="1" class="modal-cost-table">
+            <thead>
+              <tr>
+                <th>Expense</th>
+                <th>Average Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows inserted via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="DestinationExploret.html" class="active">Destinations</a></li>
+        <li><a href="RandomTrip.html">Random Trip</a></li>
+        <li><a href="TripBudget.html">Trip Budget</a></li>
+        <li><a href="TravelMood.html">Travel Mood</a></li>
+        <li><a href="Feedback.html">Feedback and FAQ</a></li>
+      </ul>
+      <form class="newsletter-form" id="newsletterForm">
+        <label for="newsletterEmail">Subscribe to Travel Nest Newsletter:</label>
+        <input type="email" id="newsletterEmail" name="newsletterEmail" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="currentYear"></span> TravelNest. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

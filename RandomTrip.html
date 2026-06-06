@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Random Trip Generator</title>
+        <meta name="description" content="Random Trip Generator">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="RandomTrip.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-brand">TravelNest</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="DestinationExploret.html">Destinations</a></li>
+                <li><a href="RandomTrip.html" class="active">Random Trip</a></li>
+                <li><a href="TripBudget.html">Trip Budget</a></li>
+                <li><a href="TravelMood.html">Travel Mood</a></li>
+                <li><a href="Feedback.html">Feedback and FAQ</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks" tabindex="0">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+        <form id="randomTripForm" class="random-trip-form">
+            <label for="travelType" class="random-trip-label">Travel Type</label>
+            <select id="travelType" name="travelType" class="random-trip-select">
+                <option value="adventure">Adventure</option>
+                <option value="relaxation">Relaxation</option>
+                <option value="cultural">Cultural</option>
+                <option value="nature">Nature</option>
+            </select>
+            <label for="budgetRange" class="random-trip-label">Budget Range</label>
+            <select id="budgetRange" name="budgetRange" class="random-trip-select">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button id="surpriseBtn" type="button" class="surprise-btn">
+                🎲 Surprise Me Again!
+            </button>
+            <div id="destinationResult" class="destination-result"></div>
+            <button id="addWishlistBtn" type="button" class="add-wishlist-btn">Add to Wishlist</button>
+            <div id="wishlistContainer" class="wishlist-container">
+                <h3 class="wishlist-title">My Wishlist</h3>
+                <ul id="wishlist" class="wishlist-list"></ul>
+            </div>
+        </form>
+        <script defer src="RandomTrip.js"></script>
+    </body>
+</html>

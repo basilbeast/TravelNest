@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback & Support - TravelNest</title>
+  <link rel="stylesheet" href="Feedback.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">TravelNest</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="DestinationExploret.html">Destinations</a></li>
+      <li><a href="RandomTrip.html">Random Trip</a></li>
+      <li><a href="TripBudget.html">Trip Budget</a></li>
+      <li><a href="TravelMood.html">Travel Mood</a></li>
+      <li><a href="Feedback.html" class="active">Feedback and FAQ</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks" tabindex="0">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+  </nav>
+
+  <div class="feedback-container">
+    <h1>Feedback & Support</h1>
+    <div id="formSuccess" class="form-success"></div>
+    <form id="feedbackForm" class="feedback-form" novalidate>
+      <div>
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" autocomplete="name" required />
+        <div class="form-error" id="nameError"></div>
+      </div>
+      <div>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" autocomplete="email" required />
+        <div class="form-error" id="emailError"></div>
+      </div>
+      <div>
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required></textarea>
+        <div class="form-error" id="messageError"></div>
+      </div>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+  <!-- FAQ Section (Accordion) -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <button class="accordion-title" aria-expanded="false">
+          How do I submit feedback or report a problem?
+          <span class="accordion-icon">&#9654;</span>
+        </button>
+        <div class="accordion-content">
+          Use the feedback form above to send us your comments, suggestions, or any issues you encounter. We'll review every message and respond if needed!
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-title" aria-expanded="false">
+          Is my information kept private?
+          <span class="accordion-icon">&#9654;</span>
+        </button>
+        <div class="accordion-content">
+          Yes, your feedback and email are kept strictly confidential. We only use them to improve our services or contact you if a reply is needed.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-title" aria-expanded="false">
+          How soon can I expect a response?
+          <span class="accordion-icon">&#9654;</span>
+        </button>
+        <div class="accordion-content">
+          We aim to reply to important feedback or support requests within 2-3 business days. Thank you for your patience!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script defer src="Feedback.js"></script>
+</body>
+</html>
